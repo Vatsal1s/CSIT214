@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Register • FlyDreamAir</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-page="register">
+<nav class="nav" role="navigation" aria-label="Main">
+    <div class="container row">
+      <div class="brand">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0A2540" stroke-width="2"><path d="M3 13l18-6-8 10-2-3-4 5z"/></svg>
+        FlyDreamAir
+      </div>
+      <div class="menu" role="menubar"><a href="book.html" class="active" role="menuitem">Book</a>
+        <a href="manage.html" role="menuitem">Manage</a>
+        <a href="your-flight.html" role="menuitem">Your Flight</a>
+        <a href="support.html" role="menuitem">Support</a><div class="account">
+  <button class="account-btn" aria-expanded="false">Hello, Guest ▾</button>
+  <div class="dropdown" role="menu" hidden>
+    <a href="login.html" role="menuitem">Login</a>
+    <a href="register.html" role="menuitem">Register</a>
+  </div>
+</div></div></div>
+      </div>
+</a></div>
+        </a>
+      </div>
+    </div>
+  </nav>
+  <main class="container" style="padding:32px 0 60px">
+    <section class="card section" style="max-width:720px;margin:auto">
+      <h2 class="section-title">Register</h2>
+      <p class="muted" style="margin-top:-8px">Create an account to book, check-in, and manage your trips.</p>
+      <div class="form-grid">
+        <div class="col-6"><label>First name<input class="input" placeholder="John" required></label></div>
+        <div class="col-6"><label>Last name<input class="input" placeholder="Doe" required></label></div>
+        <div class="col-6"><label>Email<input class="input" type="email" placeholder="you@example.com" required></label></div>
+        <div class="col-6"><label>Phone<input class="input" type="tel" placeholder="+61 4xx xxx xxx"></label></div>
+        <div class="col-6"><label>Password<input class="input" type="password" placeholder="••••••••" required></label></div>
+        <div class="col-6"><label>Confirm password<input class="input" type="password" placeholder="••••••••" required></label></div>
+        <div class="col-12"><label class="checkbox"><input type="checkbox" required> I agree to the Terms</label></div>
+        <div class="col-12"><button class="btn">Create account</button></div>
+        <div class="col-12"><p class="muted">Already have an account? <a href="login.html">Login</a>.</p></div>
+      </div>
+    </section>
+  </main>
+
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="modalBackdrop" class="backdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-label="Dialog"></div>
+  </div>
+  <button id="backToTop" class="to-top" aria-label="Back to top">↑</button>
+  <script src="assets/app.js"></script>
+</body>
+</html>
