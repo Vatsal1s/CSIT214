@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Your Flight • FlyDreamAir</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-page="your-flight">
+  <nav class="nav" role="navigation" aria-label="Main">
+    <div class="container row">
+      <div class="brand">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0A2540" stroke-width="2"><path d="M3 13l18-6-8 10-2-3-4 5z"/></svg>
+        FlyDreamAir
+      </div>
+      <div class="menu" role="menubar"><a href="book.html" role="menuitem">Book</a>
+        <a href="manage.html" role="menuitem">Manage</a>
+        <a href="your-flight.html" class="active" role="menuitem">Your Flight</a>
+        <a href="support.html" role="menuitem">Support</a><div class="account">
+  <button class="account-btn" aria-expanded="false">Hello, Guest ▾</button>
+  <div class="dropdown" role="menu" hidden>
+    <a href="login.html" role="menuitem">Login</a>
+    <a href="register.html" role="menuitem">Register</a>
+  </div>
+</div></div></div>
+      </div>
+</a></div>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container" id="main">
+    <section class="card section">
+      <h2 class="section-title">Your Flight</h2>
+      <div class="form-grid">
+        <div class="col-4">
+          <img src="assets/dubai-marina-hd.jpg" alt="Dubai skyline" style="width:100%; height:220px; object-fit:cover; border-radius:12px; border:1px solid var(--line)">
+        </div>
+        <div class="col-2">
+          <p><strong>Destination:</strong> Dubai (DXB)</p>
+          <p><strong>Flight:</strong> AP204</p>
+          <p><strong>Date:</strong> 28 Nov 2025</p>
+          <p><strong>Depart:</strong> 21:10</p>
+          <p><strong>Arrive:</strong> 06:20</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cards section" aria-label="Services">
+      <div class="service-card">
+        <h3>Onboard Wi-Fi</h3>
+        <img src="assets/wi-fi-icon-wifi-signal-icon-wireless-internet-connection-signal-vector-illustration-isolated-white-background_192280-968.jpg" alt="Onboard Wi-Fi">
+        <p class="helper">Fast, reliable connection</p>
+        <button class="btn learn" onclick="modal('Onboard Wi-Fi', '<p>Stay connected. From $8.</p>')">Learn More</button>
+      </div>
+      <div class="service-card">
+        <h3>Premium Meals</h3>
+        <img src="assets/pexels-photo-1640774.jpeg" alt="Premium meals">
+        <p class="helper">Special meals available</p>
+        <button class="btn learn" onclick="modal('Premium Meals', '<p>Vegan / Vegetarian / Gluten-free. Included.</p>')">Learn More</button>
+      </div>
+      <div class="service-card">
+        <h3>Upgrades</h3>
+        <img src="assets/istockphoto-477807400-612x612.jpg" alt="Cabin upgrades">
+        <p class="helper">More space and comfort</p>
+        <button class="btn learn" onclick="modal('Upgrades', '<p>Upgrade for extra comfort. From $120.</p>')">Learn More</button>
+      </div>
+    </section>
+  </div>
+
+  <button id="backToTop" class="btn inline ghost" aria-label="Back to top">↑ Top</button>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true"><div class="modal" role="document"></div></div>
+
+
+  <footer role="contentinfo">
+    <div class="container row">
+      <small>© FlyDreamAir</small>
+      
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

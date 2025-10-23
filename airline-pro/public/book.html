@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Book • FlyDreamAir</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-page="book">
+  <nav class="nav" role="navigation" aria-label="Main">
+    <div class="container row">
+      <div class="brand">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0A2540" stroke-width="2"><path d="M3 13l18-6-8 10-2-3-4 5z"/></svg>
+        FlyDreamAir
+      </div>
+      <div class="menu" role="menubar"><a href="book.html" class="active" role="menuitem">Book</a>
+        <a href="manage.html" role="menuitem">Manage</a>
+        <a href="your-flight.html" role="menuitem">Your Flight</a>
+        <a href="support.html" role="menuitem">Support</a><div class="account">
+  <button class="account-btn" aria-expanded="false">Hello, Guest ▾</button>
+  <div class="dropdown" role="menu" hidden>
+    <a href="login.html" role="menuitem">Login</a>
+    <a href="register.html" role="menuitem">Register</a>
+  </div>
+</div></div></div>
+      </div>
+</a></div>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO (image ends here) -->
+  <section class="hero"
+  style="background:linear-gradient(180deg,rgba(10,37,64,.45),rgba(10,37,64,.45)),url('assets/Air-New-Zealand-Boeing-747-400.webp') center/cover no-repeat;">
+  <div class="container">
+    <h1>Book. Check-in. Track status.<br>All in one elegant workspace.</h1>
+  </div>
+</section>
+  <br>
+  <br>
+
+  <!-- Booking card placed BELOW hero (no overlap) -->
+  <section class="booking-card">
+    <div class="card" role="region" aria-label="Booking card">
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" aria-selected="true" data-for="panel-book">Book</button>
+        <button class="tab" role="tab" aria-selected="false" data-for="panel-checkin">Check-in</button>
+        <button class="tab" role="tab" aria-selected="false" data-for="panel-status">Flight Status</button>
+      </div>
+
+      <div id="panel-book" class="panel" role="tabpanel">
+        <div class="form-grid">
+          <div class="col-3"><label>From<input id="from" class="input" placeholder="SYD"></label></div>
+          <div class="col-3"><label>To<input id="to" class="input" placeholder="DXB"></label></div>
+          <div class="col-3"><label>Depart<input id="depart" class="input" type="date"></label></div>
+          <div class="col-3"><label>Return<input id="return" class="input" type="date"></label></div>
+          <div class="col-2"><label>Passengers<select id="pax"><option>1</option><option>2</option><option>3</option></select></label></div>
+          <div class="col-2"><label>Cabin<select id="cabin"><option>Economy</option><option>Premium</option><option>Business</option></select></label></div>
+          <div class="col-2"><div style="margin-top:28px"><label><input id="nonstop" type="checkbox"> Direct flights only</label></div></div>
+          <div class="col-6">
+            <button id="searchBtn" class="btn">Search Flights</button>
+            <button id="clearBtn" class="btn ghost">Clear</button>
+            <span class="helper">Tip: SYD → DXB</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="panel-checkin" class="panel" role="tabpanel" hidden>
+        <div class="form-grid">
+          <div class="col-3"><label>PNR<input id="pnrCI" class="input" placeholder="ABC123" aria-label="PNR"></label></div>
+          <div class="col-3"><label>Last name<input id="lastCI" class="input" placeholder="Guest"></label></div>
+          <div class="col-6">
+            <button class="btn" onclick="(()=>{ modal('Check-in', `<p>Found booking for <strong>Guest</strong> on AP101.</p><p>Proceed to seat selection in <a href='manage.html'>Manage</a>.</p>`, [{label:'OK'}]); })()">Find booking</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="panel-status" class="panel" role="tabpanel" hidden>
+        <div class="form-grid">
+          <div class="col-3"><label>Origin<input id="origFS" class="input" placeholder="SYD"></label></div>
+          <div class="col-3"><label>Destination<input id="destFS" class="input" placeholder="DXB"></label></div>
+          <div class="col-3"><label>Date<input id="dateFS" class="input" type="date"></label></div>
+          <div class="col-6">
+            <button class="btn" onclick="(()=>{ const s=['On-time','Delayed 20m','Cancelled','Boarding']; const st=s[Math.floor(Math.random()*s.length)]; toast('Status: '+st); modal('Flight status', `<p>Next flight status: <strong>${st}</strong></p>`, [{label:'OK'}]); })()">Check status</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container" id="main">
+    <section class="results section" aria-label="Search results">
+      <h2 class="section-title">Available flights</h2>
+      <div class="chips" style="margin-bottom:10px">
+        <button class="chip" data-sort="price">Sort: Price</button>
+        <button class="chip" data-sort="duration">Sort: Duration</button>
+        <button class="chip" data-sort="departNum">Sort: Depart time</button>
+      </div>
+      <div id="results"></div>
+    </section>
+  </div>
+
+ 
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true"><div class="modal" role="document"></div></div>
+
+
+  <footer role="contentinfo">
+    <div class="container row">
+      <small>© FlyDreamAir</small>
+      
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
